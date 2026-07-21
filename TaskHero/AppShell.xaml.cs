@@ -7,6 +7,8 @@ namespace TaskHero
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute("ParentChildPage", typeof(ParentChildPage));
+            Routing.RegisterRoute("ChildAddingPage", typeof(ChildAddingPage));
         }
     }
 }

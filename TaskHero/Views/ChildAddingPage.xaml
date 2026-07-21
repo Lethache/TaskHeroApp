@@ -2,11 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskHero.Views.ChildAddingPage"
-             Title="ChildAddingPage">
-    <VerticalStackLayout>
+             BackgroundImageSource="background.png">
+    <VerticalStackLayout Margin="20" VerticalOptions="Center">
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="What is your child"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Entry Placeholder="Enter child name" PlaceholderColor="Black" ></Entry>
+        </Border>
+        <Label 
+        Text="How Old is yuor child"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Entry Placeholder="Enter child age" PlaceholderColor="Black" ></Entry>
+        </Border>
+        <Label 
+        Text="Who are you to the child"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Picker>
+                <Picker.Items>
+                    
+                </Picker.Items>
+            </Picker>
+        </Border>
+        <Button Text="Save"></Button>
     </VerticalStackLayout>
 </ContentPage>

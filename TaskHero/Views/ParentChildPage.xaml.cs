@@ -6,4 +6,8 @@ public partial class ParentChildPage : ContentPage
 	{
 		InitializeComponent();
 	}
+	private async void OnParentBorderTapped(object sender, EventArgs e)
+	{
+		await Shell.Current.GoToAsync(nameof(ChildAddingPage));
+	}
 }

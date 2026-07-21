@@ -2,11 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskHero.Views.EntranceScreen"
-              BackgroundImageSource ="bg.png">
-    <VerticalStackLayout>
+              BackgroundImageSource ="background.png">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill">
         <Label 
-            Text=""
+            Text="Task"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" FontSize="36" TextColor="Blue" />
+
+        <Label Text="Hero" FontAttributes="Bold" FontFamily="Extra Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" FontSize="40" TextColor="Orange"/>
+
+        <Image Source="entranceimg1.png"></Image>
+
+        <Label Margin="10" Text="Task Hero helps kids " 
+                FontSize="17" VerticalOptions="Center" 
+            HorizontalOptions="Center"></Label>
+        
+        <Label Margin="10" Text="complete daily tasks" 
+        FontSize="17" VerticalOptions="Center" 
+        HorizontalOptions="Center"></Label>
+        
+        <Label Margin="10" Text=" and earn rewards" 
+        FontSize="17" VerticalOptions="Center" 
+        HorizontalOptions="Center"></Label>
+
+        <Button Margin=" 30" Clicked="OnStartButtonClicked" 
+                Text="Get Started" BackgroundColor="Blue" 
+                CornerRadius="15" FontSize="17"> </Button>
     </VerticalStackLayout>
 </ContentPage>

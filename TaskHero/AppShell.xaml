@@ -7,8 +7,16 @@
     Title="TaskHero">
 
     <ShellContent
-        Title="Home"
+        
         ContentTemplate="{DataTemplate local:EntranceScreen}"
         Route="EntranceScreen" />
+    <ShellContent
+    
+    ContentTemplate="{DataTemplate local:ParentChildPage}"
+    Route="ParentChildPage" />
 
+    <ShellContent
+
+    ContentTemplate="{DataTemplate local:ChildAddingPage}"
+    Route="ChildAddingPage"/>
 </Shell>
