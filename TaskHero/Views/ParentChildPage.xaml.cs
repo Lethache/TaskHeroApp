@@ -10,4 +10,8 @@ public partial class ParentChildPage : ContentPage
 	{
 		await Shell.Current.GoToAsync(nameof(ChildAddingPage));
 	}
+    private async void OnChildBorderTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(ChildRegisterPage));
+    }
 }

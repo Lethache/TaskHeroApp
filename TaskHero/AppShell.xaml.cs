@@ -9,6 +9,8 @@ namespace TaskHero
             InitializeComponent();
             Routing.RegisterRoute("ParentChildPage", typeof(ParentChildPage));
             Routing.RegisterRoute("ChildAddingPage", typeof(ChildAddingPage));
+            Routing.RegisterRoute("ChildRegisterPage", typeof(ChildRegisterPage));
+            Routing.RegisterRoute("HomeScreen", typeof(HomeScreen));
         }
     }
 }

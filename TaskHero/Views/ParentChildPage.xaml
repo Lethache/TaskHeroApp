@@ -29,21 +29,24 @@
             
         </Border>
 
-        <Border  Margin="20" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
+        <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
         HorizontalOptions="Fill" >
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnChildBorderTapped" />
+            </Border.GestureRecognizers>
+            <Grid RowDefinitions="*, *,*" ColumnDefinitions="*,*,*">
+                <HorizontalStackLayout>
+                <Image Grid.Column="0" Grid.Row="0" Source="dadimg.png" MaximumWidthRequest="125" 
+                        MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"></Image>
 
-            <HorizontalStackLayout>
-                <Image Source="dadimg.png" MaximumWidthRequest="125" 
-            MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                    <Image Grid.Column="0" Grid.Row="0" Source="mother.png" MaximumWidthRequest="125" 
+                            MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
 
-                <Image Source="mother.png" MaximumWidthRequest="125" 
-               MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
+                    <Label Grid.Column="1" Grid.Row="1" Text="Child" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" ></Label>
 
-                <Label Text="Parent" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" ></Label>
-
-                <Image Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
-            </HorizontalStackLayout>
-
+                    <Image Grid.Column="2" Grid.Row="2" Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
+                </HorizontalStackLayout>
+            </Grid>
         </Border>
 
         

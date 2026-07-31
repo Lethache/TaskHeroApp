@@ -29,6 +29,6 @@
                 </Picker.Items>
             </Picker>
         </Border>
-        <Button Text="Save"></Button>
+        <Button Text="Save" Clicked="OnSaveClicked"></Button>
     </VerticalStackLayout>
 </ContentPage>

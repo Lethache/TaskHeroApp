@@ -6,4 +6,10 @@ public partial class ChildAddingPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    
+
+    private async void OnSaveClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(HomeScreen));
+    }
 }
