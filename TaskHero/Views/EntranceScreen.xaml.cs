@@ -11,4 +11,9 @@ public partial class EntranceScreen : ContentPage
     {
 		await Shell.Current.GoToAsync("ParentChildPage");
     }
+
+    private async void OnAuthorizationClicked(object? sender, EventArgs e)
+    {
+	    await Shell.Current.GoToAsync("AuthorizationPage");
+    }
 }

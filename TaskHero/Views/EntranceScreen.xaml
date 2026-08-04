@@ -30,5 +30,8 @@
         <Button Margin=" 30" Clicked="OnStartButtonClicked" 
                 Text="Get Started" BackgroundColor="Blue" 
                 CornerRadius="15" FontSize="17"> </Button>
+        <Button  Margin="30,0,30,40" Clicked="OnAuthorizationClicked" 
+                 Text="Authotization" BackgroundColor="Blue" 
+                 CornerRadius="15" FontSize="17"> </Button>
     </VerticalStackLayout>
 </ContentPage>

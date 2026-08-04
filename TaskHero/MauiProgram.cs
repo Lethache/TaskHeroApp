@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using TaskHero.Services;
 
 namespace TaskHero
 {
@@ -15,6 +16,7 @@ namespace TaskHero
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<AccountManager>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

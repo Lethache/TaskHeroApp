@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskHero.Views.AuthorizationPage"
+             BackgroundImageSource ="background.png">
+    <ContentPage.Content>
+        <VerticalStackLayout Margin="20" VerticalOptions="Center">
+            <Label 
+                Text="Login"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" FontSize="30" />
+            <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+                <Entry Placeholder="Login" x:Name="_loginEntry" PlaceholderColor="Black" ></Entry>
+            </Border>
+            <Label 
+                Text="Password"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" FontSize="30" />
+           <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+                <Entry Placeholder="Enter Password" x:Name="_passwordEntry" PlaceholderColor="Black" ></Entry>
+            </Border>
+            <Label 
+                Text="or Child Code "
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" FontSize="30" />
+            <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+                <Entry Placeholder="Enter Child code" x:Name="_childCodeEntry" PlaceholderColor="Black" ></Entry>
+            </Border>
+            <Button  Margin="30,0,30,40" Clicked="OnLogInClicked" 
+                     Text="Log In " BackgroundColor="Blue" 
+                     CornerRadius="15" FontSize="17"> </Button>
+            </VerticalStackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
