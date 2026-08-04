@@ -3,10 +3,96 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskHero.Views.HomeScreen"
              BackgroundImageSource="background.png">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <Grid ColumnDefinitions="*" RowDefinitions="Auto,*">
+        <VerticalStackLayout  Grid.Row="0" Margin="30" Spacing="30">
+            <Grid  ColumnDefinitions="*" RowDefinitions="Auto,*">
+                <Ellipse  WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" Fill="White">
+            
+        </Ellipse>
+        <Image Source="entranceimg1.png" WidthRequest="145" HeightRequest="145" VerticalOptions="Center" HorizontalOptions="Center">
+            <Image.Clip>
+                <EllipseGeometry Center="72.5,72.5" RadiusX="72.5" RadiusY="72.5"  />
+            </Image.Clip>
+        </Image>
+                <Label Grid.Row="1"  Text="Misha" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold"  ></Label>
+            </Grid>
+        
+        </VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center"  Margin="20" Spacing="20" Grid.Row="1">
+
+  
+        <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
+HorizontalOptions="Fill"   >
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSetUpTaskClicked" />
+            </Border.GestureRecognizers>
+            <Grid RowDefinitions="*, *,*" ColumnDefinitions="*,*,*">
+                <HorizontalStackLayout>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="setuptaskimg.png" MaximumWidthRequest="125" 
+                    MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
+
+                    <Label Grid.Column="1" Grid.Row="1" Text="Set Up Tasks " VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold" ></Label>
+
+                    <Image Grid.Column="2" Grid.Row="2" Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+
+        <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
+HorizontalOptions="Fill" >
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnCheckDoneTaskClicked" />
+            </Border.GestureRecognizers>
+            <Grid RowDefinitions="*, *,*" ColumnDefinitions="*,*,*">
+                <HorizontalStackLayout>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="checkdonetaskimg.png" MaximumWidthRequest="125" 
+                    MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
+
+                    <Label Grid.Column="1" Grid.Row="1" Text="Check Done Tasks" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold" ></Label>
+
+                    <Image Grid.Column="2" Grid.Row="2" Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+
+        <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
+                HorizontalOptions="Fill" >
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSetUpTaskClicked" />
+            </Border.GestureRecognizers>
+            <Grid RowDefinitions="*, *,*" ColumnDefinitions="*,*,*">
+                <HorizontalStackLayout>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="setupgiftimg.png" MaximumWidthRequest="125" 
+                    MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
+
+                    <Label Grid.Column="1" Grid.Row="1" Text="Set Up Gifts" VerticalOptions="Center"  FontAttributes="Bold" HorizontalOptions="Center" FontSize="40" ></Label>
+
+                    <Image Grid.Column="2" Grid.Row="2" Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+
+        <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
+HorizontalOptions="Fill" >
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnGiveaGiftClicked" />
+            </Border.GestureRecognizers>
+            <Grid RowDefinitions="*, *,*" ColumnDefinitions="*,*,*">
+                <HorizontalStackLayout>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="giveagiftimg.png" MaximumWidthRequest="125" 
+                    MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
+
+                    <Label Grid.Column="1" Grid.Row="1" Text="Give a Gift" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="40" ></Label>
+
+                    <Image Grid.Column="2" Grid.Row="2" Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+       
     </VerticalStackLayout>
+    </Grid>
 </ContentPage>
