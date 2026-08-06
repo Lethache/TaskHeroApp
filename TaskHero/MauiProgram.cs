@@ -17,6 +17,7 @@ namespace TaskHero
                 });
 
             builder.Services.AddSingleton<AccountManager>();
+            builder.Services.AddSingleton<TaskManager>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

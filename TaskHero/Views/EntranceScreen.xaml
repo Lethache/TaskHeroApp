@@ -13,7 +13,7 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" FontSize="40" TextColor="Orange"/>
 
-        <Image Source="entranceimg1.png"></Image>
+        <Image Source="entranceimg1.png" WidthRequest="400" HeightRequest="400"></Image>
 
         <Label Margin="10" Text="Task Hero helps kids " 
                 FontSize="17" VerticalOptions="Center" 
