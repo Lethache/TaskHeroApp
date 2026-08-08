@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskHero.Views.SetUpTaskPage"
+                 BackgroundImageSource="background.png">
+    <VerticalStackLayout Margin="20" VerticalOptions="Center">
+        <Label 
+                    Text="Task Name"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Entry Placeholder="Enter task Name" Text="{Binding TaskName}" PlaceholderColor="Black" ></Entry>
+        </Border>
+        <Label 
+                Text="Task Description "
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Entry Placeholder="Enter task Description" Text="{Binding TaskDescription}" PlaceholderColor="Black" ></Entry>
+        </Border>
+
+        <Label 
+            Text="Task Reward"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Entry Placeholder="Enter task reward" Text="{Binding TaskReward}" PlaceholderColor="Black" ></Entry>
+        </Border>
+        <Label 
+            Text="Choose your Child"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="30" />
+        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
+            <Picker x:Name="picker" SelectedItem="{Binding ChildTarget} " ItemsSource="{Binding ChildName}">
+                
+            </Picker>
+        </Border>
+        <Button Text="Save" Clicked="OnSaveClicked"></Button>
+    </VerticalStackLayout>
+</ContentPage>

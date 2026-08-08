@@ -13,6 +13,11 @@ namespace TaskHero
             Routing.RegisterRoute("HomeScreen", typeof(HomeScreen));
             Routing.RegisterRoute("AuthorizationPage", typeof(AuthorizationPage));
             Routing.RegisterRoute("ChildHomePage" , typeof(ChildHomePage));
+            Routing.RegisterRoute("SetUpTaskPage", typeof(SetUpTaskPage));
+            Routing.RegisterRoute("CheckDonePage", typeof(CheckDonePage));
+            Routing.RegisterRoute("SetUpGiftPage", typeof(SetUpGiftPage));
+            Routing.RegisterRoute("SetUpGiftPage", typeof(SetUpGiftPage));
+            Routing.RegisterRoute("GiveGiftPage", typeof(GiveGiftPage));
         }
     }
 }

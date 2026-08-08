@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskHero.Models 
 {
-    internal class Child :Account
+    public class Child :Account
     {
         private string _childCode;
         private string _parentId;
@@ -28,5 +28,6 @@ namespace TaskHero.Models
             get => _parentId;
           
         }
+        public string ChildName { get => _childName; }
     }
 }
