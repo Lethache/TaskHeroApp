@@ -20,7 +20,7 @@ namespace TaskHero.Models
             get { return _isExpanded; }
             set { _isExpanded = value; OnPropertyChanged(nameof(IsExpanded)); }
         }
-
+        
         public Color TaskColor
         {
             get
@@ -40,6 +40,7 @@ namespace TaskHero.Models
 
         private int _reward;
         private bool _isExpanded;
+
 
         public string TaskName
         {
@@ -96,12 +97,13 @@ namespace TaskHero.Models
         }
 
 
-        public Tasks(string taskName, string description, string owner, string childId)
+        public Tasks(string taskName, string description, string owner, string childId , int reward)
         {
             _taskName = taskName;
             _description = description;
             _owner = owner;
             _childId = childId;
+            _reward = reward;
         }
 
 

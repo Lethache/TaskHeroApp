@@ -50,6 +50,7 @@ public partial class CheckDonePage : ContentPage
         {
             if (tappedEllement.BindingContext is Tasks clickedTask)
             {
+                _accountManager.AddChildReward(clickedTask.ChildId, clickedTask.Reward);
                 _taskManager.ConfirmTask(clickedTask);
             }
         }

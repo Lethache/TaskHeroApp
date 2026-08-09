@@ -46,7 +46,7 @@ public partial class SetUpTaskPage : ContentPage
 
 		else
 		{
-			_taskmanager.AddTask(new Tasks(TaskName, TaskDescription, _accountmanager.CrtAccount.Login, _childDictionary[ChildTarget]));
+			_taskmanager.AddTask(new Tasks(TaskName, TaskDescription, _accountmanager.CrtAccount.Login, _childDictionary[ChildTarget] ,Int32.Parse(TaskReward) ));
 			await Shell.Current.GoToAsync("CheckDonePage");
 		}
     }

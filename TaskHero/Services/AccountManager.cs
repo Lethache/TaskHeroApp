@@ -1,3 +1,4 @@
+using System.Security;
 using TaskHero.Models;
 
 namespace TaskHero.Services;
@@ -19,21 +20,22 @@ public class AccountManager
         };
     }
 
-    public async Task Register(string login, string password)
+    public  bool Register(string login, string password)
     {
 
         foreach (Account account in _accountList)
         {
             if (account.Login == login)
             {
-                new Exception("This login alredy exist");
-                return;
+                throw new Exception("This login alredy exist");
+                return false;
             }
         }
         _accountList.Add(new Parent(login, password));
         Autorization(login, password);
+        return true;
     }
-    public async Task RegisterChild(string childCode, string childName)
+    public bool RegisterChild(string childCode, string childName)
     {
         foreach (Account account in _accountList)
         {
@@ -41,12 +43,13 @@ public class AccountManager
             {
                 if (child.ChildNickName == childCode)
                 {
-                    new Exception("This login alredy exist");
-                    return;
+                   throw new Exception("This login alredy exist");
+                    return false;
                 }
             }
        }
         _accountList.Add(new Child(childName , childCode,CrtAccount.Login ));
+        return true;
     }
 
 
@@ -102,6 +105,19 @@ public class AccountManager
             }
         }
         return children;
+    }
+    public void AddChildReward(string childNickName, int reward)
+    {
+        foreach (Account account in _accountList)
+        {
+            if (account is Child child)
+            {
+                if(child.ChildNickName == child.ChildNickName)
+                {
+                    child.ChildBalance += reward;
+                }
+            }
+        }
     }
 
 

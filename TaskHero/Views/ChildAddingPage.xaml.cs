@@ -24,8 +24,11 @@ public partial class ChildAddingPage : ContentPage
             }
             else
             {
-                _accountManager.RegisterChild(_childNick.Text,_childName.Text );
-                await Shell.Current.GoToAsync(nameof(HomeScreen));
+                if(_accountManager.RegisterChild(_childNick.Text,_childName.Text))
+                {
+                    await Shell.Current.GoToAsync(nameof(HomeScreen));
+                }
+                
             }
         }
         catch (Exception ex)

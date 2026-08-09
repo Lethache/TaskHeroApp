@@ -64,4 +64,10 @@ public partial class ChildHomePage : ContentPage
     {
         await Shell.Current.GoToAsync("AuthorizationPage");
     }
+    private async void OnGiftShopClicked(object sender, EventArgs e)
+    {
+
+        await Shell.Current.GoToAsync(nameof(ChildGiftShopPage));
+
+    }
 }

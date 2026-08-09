@@ -24,7 +24,7 @@ namespace TaskHero.Services
         {
             _taskList = new ObservableCollection<Tasks>
             {
-                new Tasks("Clean Room", "take plates from the room", "Misha" , "Dinoco")
+                new Tasks("Clean Room", "take plates from the room", "Misha" , "Dinoco" , 10)
 
             };
 
@@ -75,7 +75,8 @@ namespace TaskHero.Services
 
         public void ConfirmTask(Tasks task)
         {
-            //adding a reward
+            
+
             DeleteTask(task);
         }
 

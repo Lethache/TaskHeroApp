@@ -81,6 +81,9 @@
 	  <MauiXaml Update="Views\ChildAddingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ChildGiftShopPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\EntranceScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

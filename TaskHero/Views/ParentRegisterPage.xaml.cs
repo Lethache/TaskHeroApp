@@ -22,8 +22,11 @@ public partial class ParentRegisterPage : ContentPage
             }
             else
             {
-                _accountManager.Register(_login.Text, _password.Text);
-                await Shell.Current.GoToAsync("ChildAddingPage");
+                if(_accountManager.Register(_login.Text, _password.Text))
+                {
+                    await Shell.Current.GoToAsync("ChildAddingPage");
+                }
+                
             }
         }
         catch(Exception ex)

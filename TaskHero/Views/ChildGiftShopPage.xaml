@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskHero.Views.ChildGiftShopPage"
+             Title="ChildGiftShopPage"
+             BackgroundImageSource="background.png">
+
+    <VerticalStackLayout Margin="15">
+        <Label Text="Available Tasks" 
+        HorizontalOptions="Center"
+        TextColor="AliceBlue"
+        FontSize="30"
+        FontAttributes="Bold"></Label>
+        <CollectionView ItemsSource="{Binding CrtGift}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border  Padding="10"  BackgroundColor="AliceBlue"
+                  Stroke="DimGrey"
+                  StrokeThickness="4" >
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15"/>
+                        </Border.StrokeShape>
+                        <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*" >
+                            <Label Text="{Binding GiftName}"  
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    TextColor="DarkSlateGray"
+                                    Grid.Column="0" Grid.Row="0"
+                                    FontSize="20" FontAttributes="Bold"/>
+                            <Button Text="Claim" 
+                                     Clicked="OnClaimGiftClicked" 
+                                     HorizontalOptions="End"
+                                     Grid.Column="2" Grid.Row="0"/>
+
+                            <VerticalStackLayout Grid.ColumnSpan="3" Grid.Row="1">
+                                <Label Text="{Binding GiftDescription, StringFormat='Description: {0}'}" 
+                                TextColor="DarkSlateGray"
+                                FontSize="16"></Label>
+                                <Label Text="{Binding GiftPrice, StringFormat='Cost: {0}'}" 
+                                TextColor="DarkSlateGray"
+                                FontSize="16"></Label>
+                                <Image Source="{Binding ImagePath}" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center"/>
+                                <Label Text="Gift already ordered" IsVisible="{Binding IsClaimed}" 
+                                TextColor="DarkSlateGray" 
+                                FontSize="16"></Label>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
