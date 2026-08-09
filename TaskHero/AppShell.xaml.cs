@@ -18,6 +18,8 @@ namespace TaskHero
             Routing.RegisterRoute("SetUpGiftPage", typeof(SetUpGiftPage));
             Routing.RegisterRoute("SetUpGiftPage", typeof(SetUpGiftPage));
             Routing.RegisterRoute("GiveGiftPage", typeof(GiveGiftPage));
+            Routing.RegisterRoute("ParentRegisterPage", typeof(ParentRegisterPage));
+            Routing.RegisterRoute("ChildHomePage", typeof(ChildHomePage));
         }
     }
 }

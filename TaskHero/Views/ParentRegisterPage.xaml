@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskHero.Views.ParentRegisterPage"
+             BackgroundImageSource="background.png">
+    <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*">
+
+            <Label 
+            Text="LogIn" Grid.Row="0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="30" />
+            <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20" Grid.Row="1">
+                <Entry x:Name="_login" Placeholder="LogIn" PlaceholderColor="Black"  ></Entry>
+            </Border>
+            <Label 
+            Text="Password" Grid.Row="2"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="30" />
+            <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20" Grid.Row="3">
+                <Entry x:Name="_password" Placeholder="Password" PlaceholderColor="Black"  ></Entry>
+            </Border>
+            
+            <Button  Text="Save" Clicked="OnSaveClicked" Grid.Row="4"></Button>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

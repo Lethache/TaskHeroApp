@@ -14,19 +14,21 @@
             <Border.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnParentBorderTapped" />
             </Border.GestureRecognizers>
-            <HorizontalStackLayout>
-                <Image Source="dadimg.png" MaximumWidthRequest="125" 
-                    MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"></Image>
-                    
-                <Image Source="mother.png" MaximumWidthRequest="125" 
-                       MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
-                    
-                <Label Text="Parent" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" ></Label>
 
-                <Image Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
-                </HorizontalStackLayout>
-            
-            
+            <Grid  ColumnDefinitions="Auto,Auto,*,auto">
+
+                <Image Source="dadimg.png" MaximumWidthRequest="125" 
+                    MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0"></Image>
+
+                <Image Source="mother.png" MaximumWidthRequest="125" 
+                       MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"></Image>
+
+                <Label Text="Parent" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" Grid.Column="2" ></Label>
+
+                <Image Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125" Grid.Column="3"></Image>
+            </Grid>
+
+
         </Border>
 
         <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
@@ -34,18 +36,17 @@
             <Border.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnChildBorderTapped" />
             </Border.GestureRecognizers>
-            <Grid RowDefinitions="*, *,*" ColumnDefinitions="*,*,*">
-                <HorizontalStackLayout>
-                <Image Grid.Column="0" Grid.Row="0" Source="dadimg.png" MaximumWidthRequest="125" 
-                        MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+            <Grid  ColumnDefinitions="Auto,*,auto">
+                
+                
 
-                    <Image Grid.Column="0" Grid.Row="0" Source="mother.png" MaximumWidthRequest="125" 
+                    <Image Grid.Column="0"  Source="entranceimg1.png" MaximumWidthRequest="125" 
                             MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
 
-                    <Label Grid.Column="1" Grid.Row="1" Text="Child" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" ></Label>
+                    <Label Grid.Column="1"  Text="Child" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" ></Label>
 
-                    <Image Grid.Column="2" Grid.Row="2" Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
-                </HorizontalStackLayout>
+                    <Image Grid.Column="2"  Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
+                
             </Grid>
         </Border>
 

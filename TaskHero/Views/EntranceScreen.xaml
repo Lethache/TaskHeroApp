@@ -3,35 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskHero.Views.EntranceScreen"
               BackgroundImageSource ="background.png">
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill">
-        <Label 
-            Text="Task"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" FontSize="36" TextColor="Blue" />
 
-        <Label Text="Hero" FontAttributes="Bold" FontFamily="Extra Bold"
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto" ColumnDefinitions="*" >
+            <Label 
+                Text="Task" Grid.Row="0"
                 VerticalOptions="Center" 
-                HorizontalOptions="Center" FontSize="40" TextColor="Orange"/>
+                HorizontalOptions="Center" FontSize="36" TextColor="Blue" />
 
-        <Image Source="entranceimg1.png" WidthRequest="400" HeightRequest="400 "></Image>
+        <Label Grid.Row="1" Text="Hero" FontAttributes="Bold" FontFamily="Extra Bold"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" FontSize="40" TextColor="Orange"/>
 
-        <Label Margin="10" Text="Task Hero helps kids " 
-                FontSize="17" VerticalOptions="Center" 
+        <Image Grid.Row="2" Source="entranceimg1.png" WidthRequest="400" HeightRequest="400 "></Image>
+
+        <Label Grid.Row="3" Margin="10" Text="Task Hero helps kids " 
+                    FontSize="17" VerticalOptions="Center" 
+                HorizontalOptions="Center"></Label>
+
+        <Label Grid.Row="4" Margin="10" Text="complete daily tasks" 
+            FontSize="17" VerticalOptions="Center" 
             HorizontalOptions="Center"></Label>
-        
-        <Label Margin="10" Text="complete daily tasks" 
-        FontSize="17" VerticalOptions="Center" 
-        HorizontalOptions="Center"></Label>
-        
-        <Label Margin="10" Text=" and earn rewards" 
-        FontSize="17" VerticalOptions="Center" 
-        HorizontalOptions="Center"></Label>
 
-        <Button Margin=" 30" Clicked="OnStartButtonClicked" 
-                Text="Get Started" BackgroundColor="Blue" 
-                CornerRadius="15" FontSize="17"> </Button>
-        <Button  Margin="30,0,30,40" Clicked="OnAuthorizationClicked" 
-                 Text="Authotization" BackgroundColor="Blue" 
-                 CornerRadius="15" FontSize="17"> </Button>
-    </VerticalStackLayout>
+        <Label Grid.Row="5" Margin="10" Text=" and earn rewards" 
+            FontSize="17" VerticalOptions="Center" 
+            HorizontalOptions="Center"></Label>
+
+        <Button Grid.Row="6" Margin=" 30" Clicked="OnStartButtonClicked" 
+                    Text="Get Started" BackgroundColor="Blue" 
+                    CornerRadius="15" FontSize="17"> </Button>
+        <Button Grid.Row="7"  Margin="30,0,30,40" Clicked="OnAuthorizationClicked" 
+                     Text="Authotization" BackgroundColor="Blue" 
+                     CornerRadius="15" FontSize="17"></Button>
+    </Grid>
 </ContentPage>

@@ -9,6 +9,6 @@ public partial class ChildRegisterPage : ContentPage
 
     private async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-       
+        await Shell.Current.GoToAsync("ChildHomePage");
     }
 }

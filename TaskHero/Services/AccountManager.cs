@@ -19,7 +19,7 @@ public class AccountManager
         };
     }
 
-    public void Register()
+    public void Register(string login, string password)
     {
         
     }
