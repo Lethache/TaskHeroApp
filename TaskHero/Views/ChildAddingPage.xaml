@@ -5,30 +5,21 @@
              BackgroundImageSource="background.png">
     <VerticalStackLayout Margin="20" VerticalOptions="Center">
         <Label 
-            Text="What is your child"
+            Text="What is your child" 
             VerticalOptions="Center" 
             HorizontalOptions="Center" FontSize="30" />
         <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
-            <Entry Placeholder="Enter child name" PlaceholderColor="Black" ></Entry>
+            <Entry Placeholder="Enter child name" PlaceholderColor="Black" x:Name="_childName" ></Entry>
         </Border>
         <Label 
-        Text="How Old is yuor child"
+        Text="Child NickName" 
         VerticalOptions="Center" 
         HorizontalOptions="Center" FontSize="30" />
         <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
-            <Entry Placeholder="Enter child age" PlaceholderColor="Black" ></Entry>
+            <Entry Placeholder="Enter child nickname" PlaceholderColor="Black" x:Name="_childNick"></Entry>
         </Border>
-        <Label 
-        Text="Who are you to the child"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" FontSize="30" />
-        <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
-            <Picker>
-                <Picker.Items>
-                    
-                </Picker.Items>
-            </Picker>
-        </Border>
+        
+        
         <Button Text="Save" Clicked="OnSaveClicked"></Button>
     </VerticalStackLayout>
 </ContentPage>

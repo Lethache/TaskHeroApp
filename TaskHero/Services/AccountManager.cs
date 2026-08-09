@@ -14,15 +14,41 @@ public class AccountManager
     {
         _accountList = new List<Account>
         {
-            new Parent("Misha" , "12345" , AccessType.Father),
-            new Child("Alex","ABC123" , "Misha" , AccessType.Child)
+            new Parent("Misha" , "12345" ),
+            new Child("Alex","Dinoco" , "Misha" )
         };
     }
 
-    public void Register(string login, string password)
+    public async Task Register(string login, string password)
     {
-        
+
+        foreach (Account account in _accountList)
+        {
+            if (account.Login == login)
+            {
+                new Exception("This login alredy exist");
+                return;
+            }
+        }
+        _accountList.Add(new Parent(login, password));
+        Autorization(login, password);
     }
+    public async Task RegisterChild(string childCode, string childName)
+    {
+        foreach (Account account in _accountList)
+        {
+            if (account is Child child)
+            {
+                if (child.ChildNickName == childCode)
+                {
+                    new Exception("This login alredy exist");
+                    return;
+                }
+            }
+       }
+        _accountList.Add(new Child(childName , childCode,CrtAccount.Login ));
+    }
+
 
     public bool Autorization(string login, string password)
     {
@@ -46,13 +72,13 @@ public class AccountManager
 
     public bool Autorization(string childCode)
     {
-        foreach (Account account in _accountList )
+        foreach (Account account in _accountList)
         {
             if (account is Child childAccount)
             {
 
 
-                if (childAccount.ChildCode == childCode)
+                if (childAccount.ChildNickName == childCode)
                 {
                     _crtAccount = childAccount;
                     return true;
@@ -65,7 +91,7 @@ public class AccountManager
     public List<Child> GetChildByParent()
     {
         List<Child> children = new List<Child>();
-        foreach(Account account in _accountList)
+        foreach (Account account in _accountList)
         {
             if (account is Child child)
             {

@@ -32,7 +32,7 @@ public partial class SetUpTaskPage : ContentPage
 
 		foreach (Child child in _accountmanager.GetChildByParent())
 		{
-			_childDictionary.Add(child.ChildName, child.ChildCode);
+			_childDictionary.Add(child.ChildName, child.ChildNickName);
 			_childName.Add(child.ChildName);
 		}
 	}

@@ -7,22 +7,32 @@ public partial class ParentRegisterPage : ContentPage
 {
     private AccountManager _accountManager;
     public ParentRegisterPage(AccountManager accountManager)
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         _accountManager = accountManager;
-	}
+    }
 
     private async void OnSaveClicked(object sender, EventArgs e)
     {
-		if(_login.Text == null || _password.Text == null)
+        try
         {
-            await DisplayAlert("Error", "Fill the missing fields", "Ok");
+            if (_login.Text == null || _password.Text == null)
+            {
+                await DisplayAlert("Error", "Fill the missing fields", "Ok");
+            }
+            else
+            {
+                _accountManager.Register(_login.Text, _password.Text);
+                await Shell.Current.GoToAsync("ChildAddingPage");
+            }
         }
-        else
+        catch(Exception ex)
         {
-            _accountManager.Register(_login.Text, _password.Text);
-            await Shell.Current.GoToAsync("ChildAddingPage");
+            await DisplayAlert("Error", ex.Message, "ok");
         }
-		
+
+
+
+
     }
 }

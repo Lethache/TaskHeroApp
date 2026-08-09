@@ -11,13 +11,13 @@ namespace TaskHero.Views;
 public partial class AuthorizationPage : ContentPage
 {
     private readonly AccountManager _accountManager;
-    
-    
+
+
     public AuthorizationPage(AccountManager accountManager)
     {
         InitializeComponent();
         _accountManager = accountManager;
-        
+
     }
 
     private async void OnLogInClicked(object? sender, EventArgs e)
@@ -31,21 +31,21 @@ public partial class AuthorizationPage : ContentPage
             Debug.WriteLine($"login{login} , {password}");
             if (_accountManager.Autorization(login, password))
             {
-              await  Shell.Current.GoToAsync("HomeScreen");
+                await Shell.Current.GoToAsync("HomeScreen");
             }
-            else 
+            else
             {
                 DisplayAlert("Error", "Login or password is incorrect", "ok");
             }
-            
+
         }
         else if (childCode != String.Empty)
         {
             if (_accountManager.Autorization(childCode))
             {
-               await Shell.Current.GoToAsync("ChildHomePage");
+                await Shell.Current.GoToAsync("ChildHomePage");
             }
-            else 
+            else
             {
                 DisplayAlert("Error", "ChildCode is incorrect", "ok");
             }

@@ -8,12 +8,12 @@ namespace TaskHero.Models
     {
         private string _password;
 
-        public Parent(string login , string password , AccessType accessType)
+        public Parent(string login , string password )
         
         {
             _login = login;
             _password = password;
-            _accessType = accessType;
+            
         }
         
         public bool CheckPassword(string password)

@@ -6,20 +6,20 @@ namespace TaskHero.Models
 {
     public class Child :Account
     {
-        private string _childCode;
+        private string _childNickName;
         private string _parentId;
         private string _childName;
 
-        public Child(string childName,string childCode , string parentId , AccessType accessType)
+        public Child(string childName,string childNickName, string parentId )
         {
             _childName = childName;
-            _childCode = childCode;
+            _childNickName = childNickName;
             _parentId = parentId;
-            _accessType = accessType;
+            
         }
-        public string ChildCode
+        public string ChildNickName
         {
-            get => _childCode;
+            get => _childNickName;
 
         }
 
