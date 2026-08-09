@@ -29,4 +29,9 @@ public partial class HomeScreen : ContentPage
         await Shell.Current.GoToAsync(nameof(CheckDonePage));
        
     }
+
+    private async void OnChangeAccountClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("AuthorizationPage");
+    }
 }

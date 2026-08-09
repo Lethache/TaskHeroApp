@@ -1,6 +1,8 @@
+using System.ComponentModel;
+
 namespace TaskHero.Models;
 
-public class Account
+public class Account : INotifyPropertyChanged
 {
     protected string _login;
     protected AccessType _accessType;
@@ -15,5 +17,11 @@ public class Account
     {
         get => _accessType;
         set => _accessType = value;
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+    protected void OnPropertyChanged(string propertyName = "")
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

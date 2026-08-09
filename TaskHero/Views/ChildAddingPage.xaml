@@ -18,8 +18,8 @@
         <Border StrokeShape =" RoundRectangle 10 " BackgroundColor ="WhiteSmoke" Margin="20">
             <Entry Placeholder="Enter child nickname" PlaceholderColor="Black" x:Name="_childNick"></Entry>
         </Border>
-        
-        
+
+
         <Button Text="Save" Clicked="OnSaveClicked"></Button>
     </VerticalStackLayout>
 </ContentPage>

@@ -18,23 +18,20 @@
             </Grid>
 
         </VerticalStackLayout>
+        <Button Grid.Row="0" Text="Switch Account" HorizontalOptions="End" VerticalOptions="Start" Clicked="OnChangeAccountClicked"></Button>
         <VerticalStackLayout VerticalOptions="Center"  Margin="20" Spacing="20" Grid.Row="1">
 
-            <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
-    HorizontalOptions="Fill"   >
+            <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center" HorizontalOptions="Fill"   >
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnSetUpTaskClicked" />
                 </Border.GestureRecognizers>
                 <Grid RowDefinitions="*, *,*" ColumnDefinitions="Auto,*,Auto">
-                    
-
                         <Image Grid.Column="0" Grid.Row="0" Source="setuptaskimg.png" MaximumWidthRequest="125" 
                         MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
 
                         <Label Grid.Column="1"  Text="Set Up Tasks " VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold" ></Label>
 
                         <Image Grid.Column="2"  Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
-                    
                 </Grid>
             </Border>
 
@@ -43,8 +40,6 @@
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCheckDoneTaskClicked" />
                 </Border.GestureRecognizers>
-
-
                     <Grid RowDefinitions="*, *,*" ColumnDefinitions="Auto,*,Auto">
                         <Image Grid.Column="0" Grid.Row="0" Source="checkdonetaskimg.png" MaximumWidthRequest="125" 
                         MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
@@ -53,10 +48,7 @@
 
                         <Image Grid.Column="2"  Source="arrow.png" HorizontalOptions="Center" MaximumWidthRequest="125" MaximumHeightRequest="125"></Image>
                     </Grid>
-                
-
             </Border>
-
             <Border  Margin="10" BackgroundColor="Aqua" StrokeShape="RoundRectangle 20" VerticalOptions="Center"
                     HorizontalOptions="Fill" >
                 <Border.GestureRecognizers>
@@ -64,7 +56,6 @@
                 </Border.GestureRecognizers>
                 <Grid RowDefinitions="*, *,*" ColumnDefinitions="Auto,*,Auto">
                     
-
                         <Image Grid.Column="0" Grid.Row="0" Source="setupgiftimg.png" MaximumWidthRequest="125" 
                         MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
 
@@ -82,7 +73,6 @@
                 </Border.GestureRecognizers>
                 <Grid RowDefinitions="*, *,*" ColumnDefinitions="Auto,*,Auto">
                     
-
                         <Image Grid.Column="0" Grid.Row="0" Source="giveagiftimg.png" MaximumWidthRequest="125" 
                         MaximumHeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center" ></Image>
 
@@ -92,7 +82,6 @@
                     
                 </Grid>
             </Border>
-
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

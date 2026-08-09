@@ -4,7 +4,7 @@
              x:Class="TaskHero.Views.EntranceScreen"
               BackgroundImageSource ="background.png">
 
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto" ColumnDefinitions="*" >
+        <Grid RowDefinitions="Auto,Auto,*,Auto,Auto,Auto,Auto, Auto" ColumnDefinitions="*" >
             <Label 
                 Text="Task" Grid.Row="0"
                 VerticalOptions="Center" 
@@ -14,7 +14,7 @@
                     VerticalOptions="Center" 
                     HorizontalOptions="Center" FontSize="40" TextColor="Orange"/>
 
-        <Image Grid.Row="2" Source="entranceimg1.png" WidthRequest="400" HeightRequest="400 "></Image>
+        <Image Grid.Row="2" Source="entranceimg1.png" ></Image>
 
         <Label Grid.Row="3" Margin="10" Text="Task Hero helps kids " 
                     FontSize="17" VerticalOptions="Center" 

@@ -9,7 +9,7 @@ namespace TaskHero.Models
         private string _childNickName;
         private string _parentId;
         private string _childName;
-
+        private int _childBalance = 0;
         public Child(string childName,string childNickName, string parentId )
         {
             _childName = childName;
@@ -29,5 +29,10 @@ namespace TaskHero.Models
           
         }
         public string ChildName { get => _childName; }
+        public int ChildBalance
+        {
+            get => _childBalance;
+            set { _childBalance = value; OnPropertyChanged(nameof(ChildBalance)); }
+        } 
     }
 }

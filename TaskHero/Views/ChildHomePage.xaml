@@ -2,40 +2,98 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaskHero.Views.ChildHomePage" BackgroundImageSource="background.png">
-    <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding CrtTask}" >
+             x:Class="TaskHero.Views.ChildHomePage"
+             BackgroundImageSource="background.png">
+
+    <VerticalStackLayout Margin="15">
+
+        
+            <Grid  ColumnDefinitions="*" RowDefinitions="Auto,*">
+                <Ellipse  WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" Fill="White">
+
+                </Ellipse>
+                <Image Source="entranceimg1.png" WidthRequest="145" HeightRequest="145" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry Center="72.5,72.5" RadiusX="72.5" RadiusY="72.5"  />
+                    </Image.Clip>
+                </Image>
+            
+                <Label Grid.Row="1"  Text="{Binding CurrentAccount.ChildName}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold" TextColor="White" ></Label>
+            <Label Text="{Binding CurrentAccount.ChildBalance, StringFormat='Your Balance : {0}'}" TextColor="Black" FontAttributes="Bold" FontSize="25">
+               
+            </Label>
+            <Button  Text="Switch Account" HorizontalOptions="End" VerticalOptions="Start" Clicked="OnChangeAccountClicked"></Button>
+        </Grid>
+        
+
+        <Label Text="Available Tasks" 
+           HorizontalOptions="Center"
+           TextColor="AliceBlue"
+           FontSize="35"
+           FontAttributes="Bold"
+               Margin="0,0,0,10"></Label>
+
+
+        <CollectionView ItemsSource="{Binding CrtTask}" Grid.Row="1" >
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
-                   ItemSpacing="15"/>
+                           ItemSpacing="15"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-
-                <DataTemplate >
-                    <Border  Padding="10" Margin="5" BackgroundColor="AliceBlue"  >
-
-                        <Grid RowDefinitions="*,*" ColumnDefinitions="*">
+                <DataTemplate>
+                    <Border  Padding="10"  BackgroundColor="AliceBlue" 
+                             Stroke="{Binding TaskColor}"
+                             StrokeThickness="4">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15"/>
+                        </Border.StrokeShape>
+                        <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnToggleExpand" />
                             </Grid.GestureRecognizers>
-                            <VerticalStackLayout  >
-                                <Label  Text="{Binding TaskName}"  Grid.Column="0" Grid.Row="0"></Label>
-                                <VerticalStackLayout Grid.Column="0" Grid.Row="1"  IsVisible="{Binding IsExpanded}">
-                                    <Label Text="{Binding Description}"></Label>
-                                    <Label Text="{Binding Reward}"></Label>
-                                    
-                                    <Label Text="{Binding TaskStatusText}" ></Label>
-                                    <Button Text="Mark as Complete"></Button>
-                                </VerticalStackLayout>
+                            
+                            <Label   
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Center"
+                                       TextColor="DarkSlateGray"
+                                       Grid.Column="0" Grid.Row="0"
+                                       FontSize="20" FontAttributes="Bold">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{}{0} - Status: {1}">
+                                        <Binding Path="TaskName"/>
+                                        <Binding Path="TaskStatusText"/>
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                            <Button Text="Complete Task" 
+                                        Clicked="OnDoneTaskClicked" 
+                                        HorizontalOptions="End"
+                                        BackgroundColor="GreenYellow"
+                                        Grid.Column="2" Grid.Row="0">
+
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsComplete}" Value="True">
+                                        <Setter Property="IsVisible" Value="False"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <VerticalStackLayout Grid.ColumnSpan="3" Grid.Row="1"  IsVisible="{Binding IsExpanded}">
+                                <Label Text="{Binding Description, StringFormat='Description: {0}'}" 
+                                   TextColor="DarkSlateGray"
+                                   FontSize="16"></Label>
+                                <Label Text="{Binding Reward, StringFormat='Reward: {0}'}" 
+                                   TextColor="DarkSlateGray"
+                                   FontSize="16"></Label>
+                                <Label Text="{Binding TaskStatusText, StringFormat='Status: {0}'}" 
+                                   TextColor="DarkSlateGray" 
+                                   FontSize="16"></Label>
                             </VerticalStackLayout>
-
-
-
                         </Grid>
 
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </ContentPage.Content>
+    </VerticalStackLayout>
 </ContentPage>

@@ -26,7 +26,7 @@ public partial class AuthorizationPage : ContentPage
         string password = _passwordEntry.Text;
         string childCode = _childCodeEntry.Text;
 
-        if (login != null && password != null)
+        if ((login != null && login != "") || (password != null && password != ""))
         {
             Debug.WriteLine($"login{login} , {password}");
             if (_accountManager.Autorization(login, password))

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -19,12 +18,14 @@ namespace TaskHero.Services
         {
             get { return _crtTask; }
         }
+
+
         public TaskManager()
         {
             _taskList = new ObservableCollection<Tasks>
             {
-                new Tasks("Clean Room", "take plates from the room", "Misha" , "ABC123")
-                
+                new Tasks("Clean Room", "take plates from the room", "Misha" , "Dinoco")
+
             };
 
         }
@@ -34,21 +35,21 @@ namespace TaskHero.Services
             _taskList.Add(task);
         }
         public void GetTaskByOwner(string owner)
-        { 
+        {
             _crtTask.Clear();
             if (_taskList.Count > 0)
             {
-                foreach (Tasks task in _taskList) 
+                foreach (Tasks task in _taskList)
                 {
-                    if(task.Owner == owner)
+                    if (task.Owner == owner)
                     {
-                       _crtTask.Add(task);
+                        _crtTask.Add(task);
                     }
                 }
-                
+
             }
-            
-            
+
+
         }
 
         public void GetTaskByChildren(string childrenId)
@@ -65,7 +66,7 @@ namespace TaskHero.Services
                 }
 
             }
-            
+
         }
         public void CompleteTask(Tasks task)
         {
@@ -75,13 +76,23 @@ namespace TaskHero.Services
         public void ConfirmTask(Tasks task)
         {
             //adding a reward
+            DeleteTask(task);
+        }
+
+        public void RejectTask(Tasks task)
+        {
+            task.TaskStatusE = TaskStatusE.Canceled;
+        }
+
+        public void DeleteTask(Tasks task)
+        {
             _taskList.Remove(task);
+            _crtTask.Remove(task);
         }
 
         private void OnPropertyChanged(string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }
