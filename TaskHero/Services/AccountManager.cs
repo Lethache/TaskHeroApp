@@ -112,9 +112,10 @@ public class AccountManager
         {
             if (account is Child child)
             {
-                if(child.ChildNickName == child.ChildNickName)
+                if (child.ChildNickName == childNickName)
                 {
                     child.ChildBalance += reward;
+                    return;
                 }
             }
         }
