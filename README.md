@@ -1,5 +1,10 @@
 TaskHero
-
+References 
+images:https://www.youtube.com/watch?v=1w-crnTR_W4
+data binding and mvvm https://learn.microsoft.com/en-us/dotnet/maui/xaml/fundamentals/mvvm?view=net-maui-10.0
+InotifyPropertyChange https://learn.microsoft.com/en-us/shows/building-apps-with-xaml-and-dotnet-maui/update-ui-when-properties-change-building-apps-with-xaml-and-dotnet-maui
+https://learn.microsoft.com/en-us/shows/building-apps-with-xaml-and-dotnet-maui/update-ui-when-properties-change-building-apps-with-xaml-and-dotnet-maui
+border https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/border?view=net-maui-10.0
 TaskHero is a .NET MAUI application that helps a parent turn household chores into clear goals and rewards. A parent creates an account, adds a child, assigns tasks and points, reviews completed work,
 creates gifts, and confirms rewards. A child signs in with a child code, views assigned tasks, marks work as complete, tracks a points balance, and claims available gifts.
 
